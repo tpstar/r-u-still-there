@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Second = () => {
   return (
     <div>
       <h1>2nd page</h1>
-      <NavLink to="/">Go Back</NavLink>
+      <Link to="/">Go Back</Link>
     </div>
   )
 }

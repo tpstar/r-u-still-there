@@ -1,31 +1,42 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+
+import Modal from './Modal';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isStillThere: true
+      timer: false
     }
   };
 
   componentDidMount() {
-    this.timeoutId = setTimeout(() => this.setState({ isStillThere: false }), 10000);
+    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 5000);
+    console.log(this.timeoutId)
   };
 
   componentWillUnmount() {
-    this.setState({ isStillThere: true })
+    console.log('Home component will unmount')
+    this.setState({ timer: false })
     clearTimeout(this.timeoutId)
   }
 
+  closeModal() {
+    this.setState({ timer: false });
+    clearTimeout(this.timeoutId);
+    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 5000);
+  }
+
+
+  renderModal() {
+    return <Modal onClose={() => this.closeModal()}/>
+  }
+
   render() {
-    console.log(this.state.isStillThere);
-    if (!this.state.isStillThere) {
-      return <Redirect to="/sec" />
-    }
     return (
       <div>
         <h1>home</h1>
+        { this.state.timer && this.renderModal() }
       </div>
     );
   }
