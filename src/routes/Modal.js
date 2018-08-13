@@ -1,6 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
+import './Modal.css'
+
 class Modal extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +12,7 @@ class Modal extends React.Component {
   };
 
   componentDidMount() {
-    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 2500);
+    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 2000);
   };
 
   componentWillUnmount() {
@@ -20,6 +22,7 @@ class Modal extends React.Component {
   }
 
   render() {
+    console.log(this.state.timer)
     if (this.state.timer) {
       return (
         <Redirect to={{
@@ -28,35 +31,10 @@ class Modal extends React.Component {
       )
     }
     return (
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          background: "rgba(0, 0, 0, 0.15)"
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            background: "#fff",
-            top: 25,
-            left: "10%",
-            right: "10%",
-            padding: 15,
-            border: "2px solid #444"
-          }}
-        >
+      <div className="container">
+        <div className="content">
           <h1>Modal</h1>
-          <div
-            style={{
-              width: "100%",
-              height: 400,
-              background: 'LimeGreen'
-            }}
-          />
+          <div className="colorBox" />
           <button onClick={() => this.props.onClose()}>Close</button>
         </div>
       </div>

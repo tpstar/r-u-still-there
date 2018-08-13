@@ -11,7 +11,7 @@ class Home extends React.Component {
   };
 
   componentDidMount() {
-    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 5000);
+    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 2000);
     console.log(this.timeoutId)
   };
 
@@ -24,7 +24,7 @@ class Home extends React.Component {
   closeModal() {
     this.setState({ timer: false });
     clearTimeout(this.timeoutId);
-    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 5000);
+    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 2000);
   }
 
 
