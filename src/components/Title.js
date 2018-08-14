@@ -3,8 +3,8 @@ import React from 'react';
 const Title = ({children}) => {
   const containerStyle = {
     textAlign: 'center',
-    marginTop: 40,
-    marginBottom: 30,
+    marginTop: 30,
+    marginBottom: 20,
   }
   const textStyle = {
     fontWeight: '700',

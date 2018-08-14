@@ -7,6 +7,7 @@
   height: 100vh;
   background-attachment: scroll;
   overflow: scroll;
+  padding-top: 20px;
 }
 
 article {

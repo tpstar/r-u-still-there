@@ -14,7 +14,7 @@ class Modal extends React.Component {
   };
 
   componentDidMount() {
-    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 112000);
+    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 2000);
   };
 
   componentWillUnmount() {
@@ -33,10 +33,13 @@ class Modal extends React.Component {
       )
     }
     return (
-      <div className="modal_container">
-        <div className="content">
+      <div className="modalContainer">
+        <div className="contentContainer">
           <Title>Are you still there?</Title>
-          <div className="colorBox" />
+          <img src={require('../img/destruction-earth.jpg')} alt="destruction earth" className="modalImage"/>
+        <div className="textContainer">
+          <p>Half of humanity was wiped out by Thanos’ fatal finger snap. And the only way to bring back dead Avengers is to time travel through Quantum Realm.</p>
+        </div>
           <Button onClickButton={this.props.onClickButton} >I’m still here</Button>
         </div>
       </div>
