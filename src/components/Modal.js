@@ -2,6 +2,8 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 import './Modal.css';
+import Title from './Title';
+import Button from './Button';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -33,9 +35,9 @@ class Modal extends React.Component {
     return (
       <div className="modal_container">
         <div className="content">
-          <h1>Modal</h1>
+          <Title>Are you still there?</Title>
           <div className="colorBox" />
-          <button onClick={() => this.props.onClose()} className="btn">I’m still here</button>
+          <Button onClickButton={this.props.onClickButton} >I’m still here</Button>
         </div>
       </div>
     );

@@ -9,22 +9,6 @@
   overflow: scroll;
 }
 
-.title {
-  text-align: center;
-  margin-top: 60px;
-  margin-bottom: 40px;
-}
-
-h1 {
-  font-weight: 700;
-  display: inline-block;
-  background-image: linear-gradient(to right, #6573c3, #2c387e);
-  -webkit-background-clip: text;
-  color: transparent;
-  letter-spacing: 2px;
-  padding: 0 20px;
-}
-
 article {
   -webkit-column-width: 300px;
   -moz-column-width: 300px;

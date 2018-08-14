@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Modal from './Modal';
+import Title from './Title';
 import './Home.css';
 
 class Home extends React.Component {
@@ -30,15 +31,13 @@ class Home extends React.Component {
 
 
   renderModal() {
-    return <Modal onClose={() => this.closeModal()}/>
+    return <Modal onClickButton={() => this.closeModal()}/>
   }
 
   render() {
     return (
       <div className="home_container">
-        <div className="title">
-          <h1>Quantum Mechanics of Time Travel</h1>
-        </div>
+        <Title>Quantum Mechanics of Time Travel</Title>
         <article>
           <p className="paragraph">Until recently, most studies on time travel are based upon classical general relativity. Coming up with a quantum version of time travel requires us to figure out the time evolution equations for density states in the presence of closed timelike curves (CTC).</p>
           <p>Novikov had conjectured that once quantum mechanics is taken into account, self-consistent solutions always exist for all time machine configurations, and initial conditions. However, it has been noted such solutions are not unique in general, in violation of determinism, unitarity and linearity.</p>

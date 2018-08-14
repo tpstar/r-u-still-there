@@ -15,9 +15,9 @@
   transform: translate(-50%, -50%);
   width: 80%;
   background-color: #fff;
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, .2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
   border-radius: 3px;
-  padding: 15px;
+  padding: 0 15px 15px;
 }
 
 .colorBox {
@@ -26,28 +26,7 @@
   background: LimeGreen;
 }
 
-.btn,
-.btn:link,
-.btn:visited {
-  background-color: #2c387e;
-  color: #fff;
-  text-decoration: none;
-  padding: 14px 40px;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all .2s;
-  position: relative;
-  font-size: 20px;
-  border: none;
-  cursor: pointer;
+.btnContainer {
+  text-align: center;
+  margin-top: 10px;
 }
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
-}
-
-/* .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-} */
