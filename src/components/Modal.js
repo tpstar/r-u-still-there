@@ -38,7 +38,9 @@ class Modal extends React.Component {
           <div className="textContainer">
             <p className="paragraph">Half of humanity was wiped out by Thanos’ fatal finger snap. And the only way to bring back dead Avengers is to time travel through Quantum Realm.</p>
           </div>
-          <Button onClickButton={this.props.onClickButton} styles={{paddingTop: 12, paddingBottom: 12}} >I’m still here</Button>
+          <div className="btnContainer">
+            <Button onClickButton={this.props.onClickButton} styles={{paddingTop: 12, paddingBottom: 12}} >I’m still here</Button>
+          </div>
         </div>
       </div>
     );
