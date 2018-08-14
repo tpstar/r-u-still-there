@@ -1,0 +1,44 @@
+.home_container {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                    url(../img/quantum.jpg);
+
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: scroll;
+  overflow: scroll;
+}
+
+.title {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #6573c3, #2c387e);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  padding: 0 20px;
+}
+
+article {
+  -webkit-column-width: 300px;
+  -moz-column-width: 300px;
+  column-width: 300px;
+  padding: 30px;
+  font-size: 17px;
+}
+
+img {
+  padding: 10px;
+}
+
+.paragraph::first-letter {
+  font-size: 20px;
+  color: #FF8A65;
+  font-weight: bold;
+}

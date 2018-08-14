@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-import './Modal.css'
+import './Modal.css';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Modal extends React.Component {
   };
 
   componentDidMount() {
-    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 2000);
+    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 112000);
   };
 
   componentWillUnmount() {
@@ -31,11 +31,11 @@ class Modal extends React.Component {
       )
     }
     return (
-      <div className="container">
+      <div className="modal_container">
         <div className="content">
           <h1>Modal</h1>
           <div className="colorBox" />
-          <button onClick={() => this.props.onClose()}>Close</button>
+          <button onClick={() => this.props.onClose()} className="btn">I’m still here</button>
         </div>
       </div>
     );

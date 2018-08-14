@@ -1,21 +1,20 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* to include border and padding in the width */
+  text-rendering: optimizeLegibility;
 }
 
 html {
     /* set 1 rem to 10px */
     /* font-size: 10px;  */
-    font-size: 62.5%; /* user font size is 16px, 62.5% of 16px is 10 px */
+    /* user font size is 16px, 62.5% of 16px is 10 px */
+    /* font-size: 62.5%;  */
 }
 
 body {
-    box-sizing: border-box;
-    padding: 3rem;
-
     font-family: "Lato", sans-serif;
     font-weight: 400;
     line-height: 1.7;
