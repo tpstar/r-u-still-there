@@ -13,7 +13,7 @@ class Home extends React.Component {
   };
 
   componentDidMount() {
-    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 2000);
+    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 10000);
     console.log(this.timeoutId)
   };
 
@@ -26,7 +26,7 @@ class Home extends React.Component {
   closeModal() {
     this.setState({ timer: false });
     clearTimeout(this.timeoutId);
-    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 2000);
+    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 10000);
   }
 
 
@@ -36,7 +36,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="home_container">
+      <div className="homeContainer">
         <Title>Quantum Mechanics of Time Travel</Title>
         <article>
           <p className="paragraph">Until recently, most studies on time travel are based upon classical general relativity. Coming up with a quantum version of time travel requires us to figure out the time evolution equations for density states in the presence of closed timelike curves (CTC).</p>

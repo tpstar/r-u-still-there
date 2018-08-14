@@ -14,7 +14,7 @@ class Modal extends React.Component {
   };
 
   componentDidMount() {
-    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 2000);
+    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 5000);
   };
 
   componentWillUnmount() {
@@ -27,9 +27,7 @@ class Modal extends React.Component {
     console.log(this.state.timer)
     if (this.state.timer) {
       return (
-        <Redirect to={{
-          pathname: '/sec',
-        }}/>
+        <Redirect to='/sec'/>
       )
     }
     return (
@@ -37,10 +35,10 @@ class Modal extends React.Component {
         <div className="contentContainer">
           <Title>Are you still there?</Title>
           <img src={require('../img/destruction-earth.jpg')} alt="destruction earth" className="modalImage"/>
-        <div className="textContainer">
-          <p>Half of humanity was wiped out by Thanos’ fatal finger snap. And the only way to bring back dead Avengers is to time travel through Quantum Realm.</p>
-        </div>
-          <Button onClickButton={this.props.onClickButton} >I’m still here</Button>
+          <div className="textContainer">
+            <p className="paragraph">Half of humanity was wiped out by Thanos’ fatal finger snap. And the only way to bring back dead Avengers is to time travel through Quantum Realm.</p>
+          </div>
+          <Button onClickButton={this.props.onClickButton} styles={{paddingTop: 12, paddingBottom: 12}} >I’m still here</Button>
         </div>
       </div>
     );

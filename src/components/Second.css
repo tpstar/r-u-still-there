@@ -1,6 +1,6 @@
-.homeContainer {
+.qrContainer {
   background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-                    url(../img/quantum.jpg);
+                    url(../img/quantum-realm.jpeg);
 
   background-size: cover;
   background-position: center;
@@ -8,6 +8,11 @@
   background-attachment: scroll;
   overflow: scroll;
   padding-top: 20px;
+}
+
+.btnContainer {
+  text-align: center;
+  margin-top: 10px;
 }
 
 article {
@@ -18,12 +23,29 @@ article {
   font-size: 17px;
 }
 
-img {
-  padding: 10px;
-}
 
 .paragraph::first-letter {
   font-size: 20px;
   color: #FF8A65;
   font-weight: bold;
+}
+
+.qrImage {
+  max-width: 46%;
+  height: auto;
+  margin-left: 27%;
+}
+
+@media only screen and (max-width: 900px) {
+  .qrImage {
+    max-width: 50%;
+    margin-left: 25%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .qrImage {
+    max-width: 60%;
+    margin-left: 20%;
+  }
 }
