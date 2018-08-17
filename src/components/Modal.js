@@ -4,28 +4,22 @@ import { Redirect } from 'react-router-dom';
 import './Modal.css';
 import Title from './Title';
 import Button from './Button';
+import Timer from './Timer';
 
 class Modal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      timer: false
+      timeUp: false,
     }
   };
 
-  componentDidMount() {
-    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 5000);
-  };
-
-  componentWillUnmount() {
-    console.log('Modal component will unmount')
-    this.setState({ timer: false })
-    clearTimeout(this.timeoutId)
+  handleTimeUp() {
+    this.setState({timeUp: true})
   }
 
   render() {
-    console.log(this.state.timer)
-    if (this.state.timer) {
+    if (this.state.timeUp) {
       return (
         <Redirect to='/sec'/>
       )
@@ -42,6 +36,7 @@ class Modal extends React.Component {
             <Button onClickButton={this.props.onClickButton} styles={{paddingTop: 12, paddingBottom: 12}} >I’m still here</Button>
           </div>
         </div>
+              { !this.state.timeUp && <Timer timeUp={() => this.handleTimeUp()} timeDelay={5000}/>}
       </div>
     );
   }

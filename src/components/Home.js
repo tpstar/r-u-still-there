@@ -2,36 +2,29 @@ import React from 'react';
 
 import Modal from './Modal';
 import Title from './Title';
+import Timer from './Timer';
 import './Home.css';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      timer: false
+      timeUp: false,
     }
+    this.handleTimeUp = this.handleTimeUp.bind(this);
   };
-
-  componentDidMount() {
-    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 10000);
-    console.log(this.timeoutId)
-  };
-
-  componentWillUnmount() {
-    console.log('Home component will unmount')
-    this.setState({ timer: false })
-    clearTimeout(this.timeoutId)
-  }
 
   closeModal() {
-    this.setState({ timer: false });
-    clearTimeout(this.timeoutId);
-    this.timeoutId = setTimeout(() => this.setState({ timer: true }), 10000);
+    this.setState({ timeUp: false });
   }
 
 
   renderModal() {
     return <Modal onClickButton={() => this.closeModal()}/>
+  }
+
+  handleTimeUp() {
+    this.setState({timeUp: true})
   }
 
   render() {
@@ -51,7 +44,8 @@ class Home extends React.Component {
           <p>This leads to seemingly paradoxical resolutions to the grandfather paradox. Assume the external subsystem is irrelevant, and only a qubit travels in the CTC. </p>
           <p>Later researchers have noted that if his prescription turned out to be right, computers in the vicinity of a time machine can solve PSPACE-complete problems.</p>
         </article>
-        { this.state.timer && this.renderModal() }
+        { this.state.timeUp && this.renderModal() }
+        { !this.state.timeUp && <Timer timeUp={() => this.handleTimeUp()} timeDelay={10000}/>}
       </div>
 
     );
