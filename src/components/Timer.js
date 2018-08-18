@@ -9,14 +9,12 @@ class Timer extends Component {
   }
 
   componentDidMount() {
-    console.log('Timer did mount')
     this.timeoutId = setTimeout(() => this.setState({ timer: true }), this.props.timeDelay);
   };
 
   componentWillUnmount() {
     this.setState({ timer: false })
     clearTimeout(this.timeoutId);
-    console.log('clearTimeout')
   }
 
   render() {

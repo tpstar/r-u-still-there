@@ -20,7 +20,14 @@ class Home extends React.Component {
 
 
   renderModal() {
-    return <Modal onClickButton={() => this.closeModal()}/>
+    return <Modal
+      onClickButton={() => this.closeModal()}
+      redirectTo={'/sec'}
+      titleText={'Are you still there?'}
+      imgSrc={'/static/media/destruction-earth.fab07946.jpg'}
+      pText={"Half of humanity was wiped out by Thanos’ fatal finger snap. And the only way to bring back dead Avengers is to time travel through Quantum Realm."}
+      buttonText={"I’m still here"}
+    />
   }
 
   handleTimeUp() {

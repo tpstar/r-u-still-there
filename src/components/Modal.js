@@ -21,19 +21,19 @@ class Modal extends React.Component {
   render() {
     if (this.state.timeUp) {
       return (
-        <Redirect to='/sec'/>
+        <Redirect to={this.props.redirectTo} />
       )
     }
     return (
       <div className="modalContainer">
         <div className="contentContainer">
-          <Title>Are you still there?</Title>
-          <img src={require('../img/destruction-earth.jpg')} alt="destruction earth" className="modalImage"/>
+          <Title>{this.props.titleText}</Title>
+          <img src={this.props.imgSrc} alt="destruction earth" className="modalImage"/>
           <div className="textContainer">
-            <p className="paragraph">Half of humanity was wiped out by Thanos’ fatal finger snap. And the only way to bring back dead Avengers is to time travel through Quantum Realm.</p>
+            <p className="paragraph">{this.props.pText}</p>
           </div>
           <div className="btnContainer">
-            <Button onClickButton={this.props.onClickButton} styles={{paddingTop: 12, paddingBottom: 12}} >I’m still here</Button>
+            <Button onClickButton={this.props.onClickButton} styles={{paddingTop: 12, paddingBottom: 12}} >{this.props.buttonText}</Button>
           </div>
         </div>
               { !this.state.timeUp && <Timer timeUp={() => this.handleTimeUp()} timeDelay={5000}/>}

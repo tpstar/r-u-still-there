@@ -9,7 +9,7 @@ const Second = () => {
   return (
     <div className="qrContainer">
       <Title>Quantum Realm</Title>
-      <img src={require('../img/quantum-realm2.png')} alt="quantum realm 2" className="qrImage"/>
+      <img src="/static/media/quantum-realm2.2e0d4fe3.png" alt="quantum realm 2" className="qrImage" />
       <article>
         <p className="paragraph">The quantum realm, also called the quantum scale, is a term of art in physics referring to scales where quantum mechanical effects become important when studied as an isolated system. Typically, this means distances of 100 nanometers (10−9 meters) or less or at very low temperature. More precisely, it is where the action or angular momentum is quantized.</p>
         <p>While originating on the nanometer scale, such effects can operate on a macro level generating some paradoxes like in the Schrödinger's cat thought experiment. Two classical examples are electron tunneling and the double-slit experiment. Most fundamental processes in molecular electronics, organic electronics and organic semiconductors also originate in the quantum realm.</p>
