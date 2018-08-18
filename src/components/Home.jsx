@@ -2,37 +2,21 @@ import React from 'react';
 
 import Modal from './Modal';
 import Title from './Title';
-import Timer from './Timer';
+import { TimerWrapper } from "./TimerWrapper";
 import DestructionEarth from '../img/destruction-earth.jpg';
 import './Home.css';
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      timeUp: false,
-    }
-    this.handleTimeUp = this.handleTimeUp.bind(this);
-  };
-
-  closeModal() {
-    this.setState({ timeUp: false });
-  }
-
 
   renderModal() {
     return <Modal
-      onClickButton={() => this.closeModal()}
+      onClickButton={this.props.resetTimer}
       redirectTo={'/sec'}
       titleText={'Are you still there?'}
       imgSrc={ DestructionEarth }
       pText={"Half of humanity was wiped out by Thanos’ fatal finger snap. And the only way to bring back dead Avengers is to time travel through Quantum Realm."}
       buttonText={"I’m still here"}
     />
-  }
-
-  handleTimeUp() {
-    this.setState({timeUp: true})
   }
 
   render() {
@@ -52,13 +36,11 @@ class Home extends React.Component {
           <p>This leads to seemingly paradoxical resolutions to the grandfather paradox. Assume the external subsystem is irrelevant, and only a qubit travels in the CTC. </p>
           <p>Later researchers have noted that if his prescription turned out to be right, computers in the vicinity of a time machine can solve PSPACE-complete problems.</p>
         </article>
-        { this.state.timeUp && this.renderModal() }
-        { !this.state.timeUp && <Timer timeUp={() => this.handleTimeUp()} timeDelay={10000}/>}
+        { this.props.timer && this.renderModal() }
       </div>
 
     );
   }
-
 };
 
-export default Home;
+export default TimerWrapper(Home, 10000);

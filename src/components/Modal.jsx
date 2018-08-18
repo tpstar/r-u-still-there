@@ -4,22 +4,12 @@ import { Redirect } from 'react-router-dom';
 import './Modal.css';
 import Title from './Title';
 import Button from './Button';
-import Timer from './Timer';
+import { TimerWrapper } from "./TimerWrapper";
 
 class Modal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      timeUp: false,
-    }
-  };
-
-  handleTimeUp() {
-    this.setState({timeUp: true})
-  }
 
   render() {
-    if (this.state.timeUp) {
+    if (this.props.timer) {
       return (
         <Redirect to={this.props.redirectTo} />
       )
@@ -36,10 +26,9 @@ class Modal extends React.Component {
             <Button onClickButton={this.props.onClickButton} styles={{paddingTop: 12, paddingBottom: 12}} >{this.props.buttonText}</Button>
           </div>
         </div>
-              { !this.state.timeUp && <Timer timeUp={() => this.handleTimeUp()} timeDelay={5000}/>}
       </div>
     );
   }
 };
 
-export default Modal;
+export default TimerWrapper(Modal, 5000);
