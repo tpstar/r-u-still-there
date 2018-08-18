@@ -28,7 +28,7 @@ class Modal extends React.Component {
       <div className="modalContainer">
         <div className="contentContainer">
           <Title>{this.props.titleText}</Title>
-          <img src={this.props.imgSrc} alt="destruction earth" className="modalImage"/>
+          <img src={ this.props.imgSrc } alt="destruction earth" className="modalImage"/>
           <div className="textContainer">
             <p className="paragraph">{this.props.pText}</p>
           </div>

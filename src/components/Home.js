@@ -3,6 +3,7 @@ import React from 'react';
 import Modal from './Modal';
 import Title from './Title';
 import Timer from './Timer';
+import DestructionEarth from '../img/destruction-earth.jpg';
 import './Home.css';
 
 class Home extends React.Component {
@@ -24,7 +25,7 @@ class Home extends React.Component {
       onClickButton={() => this.closeModal()}
       redirectTo={'/sec'}
       titleText={'Are you still there?'}
-      imgSrc={'/static/media/destruction-earth.fab07946.jpg'}
+      imgSrc={ DestructionEarth }
       pText={"Half of humanity was wiped out by Thanos’ fatal finger snap. And the only way to bring back dead Avengers is to time travel through Quantum Realm."}
       buttonText={"I’m still here"}
     />
